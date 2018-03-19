@@ -3,221 +3,47 @@ body {
   padding: 0;
   font-family: 'Work Sans', sans-serif;
   text-align: left;
-  color: #eed;
-  background-color: #334;
-  transition: all .4s ease-in-out;
+  background-color: #fee;
 }
 
 .head {
   font-weight: lighter;
-  letter-spacing: 3px;
-  padding: 35px 30px 30px 30px;
-  background-color: #eed;
-  color: #334;
-  margin-top: -5px;
-  margin-bottom: 70px;
-}
-
-.bottomnav {
-  overflow: hidden;
-  position: fixed;
+  position: absolute;
+  bottom: 0;
   right: 0;
-  bottom: 0;
-  padding-right: 40px;
-  padding-bottom: 18px;
-}
-
-.bottomnav div:hover rectangle{
-  opacity: 1;
-}
-
-.navItem {
-  float: left;
-  display: block;
-  text-align: left;
-  text-decoration: none;
-  font-size: 17px;
-  width: 55px;
-  height: 45px;
-  overflow: hidden;
-  transition: all .1s ease-in;
-  margin-right: 20px;
-}
-
-.navButton {
-  display: inline-block;
-  border-radius: 13px;
-  text-align: center;
-  font-size: 20px;
-  height: 45px;
-  width: 45px;
-  background-color: transparent;
-  border: 0px solid;
-  color: #eed;
-  font-weight: 300;
-}
-
-.navButton:first-child{
-  margin-left: 7px;
-}
-
-.navDescriptor {
-  font-size: 11px;
-  opacity: 0;
-  transition: all .15s ease-in-out;
-  margin-left: 15px;
-  padding-bottom: 5px;
-  letter-spacing: 1;
-  font-weight: lighter;
-}
-
-.navItem:hover {
-  transition: all 0.4s ease-in;
-  width: 160px;
-}
-
-.shortcut {
-  padding: 30px;
-  border-radius: 22px;
-  background-color: #eed;
-  color: #334;
-  margin: 30px;
-  font-size: 40px;
-  transition: all .15s ease-in-out;
-}
-
-.desc {
-  color: #eed;
-  margin-left: 30px;
-  margin-top: 80px;
-}
-
-
-#footer {
-  position:fixed;
-  bottom: 0;
-  left: 0;
-  padding-left: 30px;
-  font-size: 11px;
-  font-weight: 100;
-  margin-bottom: 80px;
-  padding-bottom: 7px;
-  border-bottom: 3px double;
   width: 100%;
   letter-spacing: 1px;
+  padding: 35px;
+  color: #fee;
+  background-color: #334;
+  text-align: right;
+  margin-bottom: -5px;
 }
 
-
-/* COLORS FUN STUFF */
-
-#Ps {
-  border: 1px solid #05a2bf;
-  color: #7ec8d6;
+.searchbar {
+  position: absolute;
+  bottom: 0;
+  margin: 30px;
+  width: 300px;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 12px 20px 8px 0px;
+  transition: all .3s ease-in-out;
+  background-color: transparent;
+  border: 0px solid;
+  border-bottom: 2px solid;
+  border-color: #a8a8bf;
+  font-family: "Work Sans", sans-serif;
+  color: #fee;
+  box-shadow: none;
 }
 
-#Ps_desc{
-  color: #7ec8d6;
+.searchbar:focus {
+  width: 70%;
+  border-color: #fee;
+  outline: none;
 }
 
-#Ps:hover{
-  background: #32485b;
-}
-
-#Ps:focus{
-  background: #05a2bf;
-  color: #334;
-}
-
-#Ai {
-  border: 1px solid #ef9c1f;
-  color: #edd5b1;
-}
-
-#Ai_desc{
-  color: #edd5b1;
-}
-
-#Ai:hover{
-  background: #42382c; /* new hover color */
-}
-
-#Ai:focus{
-  background: #ef9c1f; /* darker */
-  color: #334; /* don't change */
-}
-
-#Id {
-  border: 1px solid #e55489;
-  color: #f7b4cd;
-}
-
-#Id_desc{
-  color: #f7b4cd;
-}
-
-#Id:hover{
-  background: #4c334c; /* new hover color */
-}
-
-#Id:focus{
-  background: #e55489; /* darker */
-  color: #334; /* don't change */
-}
-
-#Pr {
-  border: 1px solid #8645a5;
-  color: #d3b1e2;
-}
-
-#Pr_desc{
-  color: #d3b1e2;
-}
-
-#Pr:hover{
-  background: #46385b; /* new hover color */
-}
-
-#Pr:focus{
-  background: #8645a5; /* darker */
-  color: #334; /* don't change */
-}
-
-#Dw {
-  border: 1px solid #8dbf3d;
-  color: #cfed9e;
-}
-
-#Dw_desc{
-  color: #cfed9e;
-}
-
-#Dw:hover{
-  background: #323a33; /* new hover color */
-}
-
-#Dw:focus{
-  background: #8dbf3d; /* darker */
-  color: #334; /* don't change */
-}
-
-#Lr {
-  border: 1px solid #809caf;
-  color: #b8cddb;
-}
-
-#Lr_desc{
-  color: #b8cddb;
-}
-
-#Lr:hover{
-  background: #353e51; /* new hover color */
-}
-
-#Lr:focus{
-  background: #809caf; /* darker */
-  color: #334; /* don't change */
-}
-
-button:focus {
-  outline:0;
+::placeholder{
+  color: #a8a8bf;
 }
