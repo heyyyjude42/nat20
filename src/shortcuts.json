@@ -1,0 +1,310 @@
+{
+  "Ps": {
+    "fullname" : "ADOBE PHOTOSHOP",
+    "cmd+t" : {
+        "shortcut" : "Free Transform",
+        "detail" : ""
+      },
+    "[" : {
+        "shortcut" : "Decrease Brush Size",
+        "detail" : ""
+      },
+    "]" : {
+        "shortcut" : "Increase Brush Size",
+        "detail" : ""
+      },
+    "shift+[" : {
+        "shortcut" : "Decrease Brush Hardness",
+        "detail" : ""
+      },
+    "shift+]" : {
+        "shortcut" : "Increase Brush Hardness",
+        "detail" : ""
+      },
+    "d" : {
+        "shortcut" : "Default Foreground/Background colors",
+        "detail" : ""
+      },
+    "x" : {
+        "shortcut" : "Switch Foreground/Background colors",
+        "detail" : ""
+      },
+    "cmd+j" : {
+        "shortcut" : "New layer via copy",
+        "detail" : ""
+      },
+    "shift+cmd+j" : {
+        "shortcut" : "New layer via cut",
+        "detail" : ""
+      },
+    "" : {
+        "shortcut" : "",
+        "detail" : ""
+      },
+    "esc" : {
+        "shortcut" : "Cancel any modal dialog window (including the Start Workspace).",
+        "detail" : ""
+      },
+    "enter" : {
+        "shortcut" : "Select the first edit field of the tool bar.",
+        "detail" : ""
+      },
+    "tab" : {
+        "shortcut" : "Navigate between fields.",
+        "detail" : ""
+      },
+    "shift+tab" : {
+        "shortcut" : "Navigate between fields in opposite direction.",
+        "detail" : ""
+      },
+    "alt" : {
+        "shortcut" : "Change Cancel to Reset.",
+        "detail" : ""
+      },
+    "cmd+f" : {
+        "shortcut" : "Search across Photoshop UI, Help & Learn content, and Adobe Stock assets. For more information, see Photoshop search.",
+        "detail" : ""
+      },
+    "f1" : {
+        "shortcut" : "Undo/Redo",
+        "detail" : ""
+      },
+    "f2" : {
+        "shortcut" : "Cut",
+        "detail" : ""
+      },
+    "f3" : {
+        "shortcut" : "Copy",
+        "detail" : ""
+      },
+    "f4" : {
+        "shortcut" : "Paste",
+        "detail" : ""
+      },
+    "f5" : {
+        "shortcut" : "Show/Hide Brush panel.",
+        "detail" : ""
+      },
+    "f6" : {
+        "shortcut" : "Show/Hide Color panel.",
+        "detail" : ""
+      },
+    "f7" : {
+        "shortcut" : "Show/Hide Layers panel.",
+        "detail" : ""
+      },
+    "f8" : {
+        "shortcut" : "Show/Hide Info panel.",
+        "detail" : ""
+      },
+    "alt+f9" : {
+        "shortcut" : "",
+        "detail" : "Show/Hide Actions panel."
+      },
+    "f12" : {
+        "shortcut" : "Revert",
+        "detail" : ""
+      },
+    "shift+f5" : {
+        "shortcut" : "Fill",
+        "detail" : ""
+      },
+    "shift+f6" : {
+        "shortcut" : "Feather Selection",
+        "detail" : ""
+      },
+    "shift+f7" : {
+        "shortcut" : "Inverse Selection",
+        "detail" : ""
+      },
+    "v" : {
+        "shortcut" : "Move tool",
+        "detail" : ""
+      },
+    "m" : {
+        "shortcut" : "Rectangular Marquee and Elliptical Marquee tools.",
+        "detail" : ""
+      },
+    "l" : {
+        "shortcut" : "Lasso, Polygonal Lasso, and Magnetic Lasso tools.",
+        "detail" : ""
+      },
+    "w" : {
+        "shortcut" : "Magic Wand and Quick Selection tools.",
+        "detail" : ""
+      },
+    "c" : {
+        "shortcut" : "Crop, Slice, and Slice Select tools.",
+        "detail" : ""
+      },
+    "i" : {
+        "shortcut" : "Eyedropper, Color Sampler, Ruler, and Note tools.",
+        "detail" : ""
+      },
+    "j" : {
+        "shortcut" : "Spot Healing Brush, Healing Brush, Patch, and Red Eye tools.",
+        "detail" : ""
+      },
+    "b" : {
+        "shortcut" : "Brush, Pencil, Color Replacement, and Mixer Brush tools.",
+        "detail" : ""
+      },
+    "s" : {
+        "shortcut" : "Clone Stamp tool.",
+        "detail" : ""
+      },
+    "y" : {
+        "shortcut" : "History Brush tool.",
+        "detail" : ""
+      },
+    "e" : {
+        "shortcut" : "Eraser, Background Eraser, Magic Eraser tools.",
+        "detail" : ""
+      },
+    "g" : {
+        "shortcut" : "Gradient and Paint Bucket tools.",
+        "detail" : ""
+      },
+    "o" : {
+        "shortcut" : "Dodge, Burn, and Sponge tools.",
+        "detail" : ""
+      },
+    "p" : {
+        "shortcut" : "Pen and Freeform Pen tools",
+        "detail" : ""
+      },
+    "t" : {
+        "shortcut" : "Horizontal Type, Vertical Type, Horizontal Type mask, and Vertical Type mask tools.",
+        "detail" : ""
+      },
+    "a" : {
+        "shortcut" : "Path Selection and Direct Selection tools.",
+        "detail" : ""
+      },
+    "u" : {
+        "shortcut" : "Rectangle, Rounded Rectangle, Ellipse, Polygon, Line, and Custom Shape tools.",
+        "detail" : ""
+      },
+    "h" : {
+        "shortcut" : "Hand tool. Hold down H and click in the image and hold down the mouse button to temporarily zoom into an image.",
+        "detail" : ""
+      },
+    "r" : {
+        "shortcut" : "Rotate View tool",
+        "detail" : ""
+      },
+    "z" : {
+        "shortcut" : "Zoom tool",
+        "detail" : ""
+      },
+    "q" : {
+        "shortcut" : "Toggle Standard/Quick Mask modes",
+        "detail" : ""
+      },
+    "j" : {
+        "shortcut" : "Content-Aware Move tool",
+        "detail" : ""
+      },
+    "c" : {
+        "shortcut" : "Perspective Crop tool",
+        "detail" : ""
+      },
+    "/" : {
+        "shortcut" : "Toggle Preserve Transparency",
+        "detail" : ""
+      },
+    "," : {
+        "shortcut" : "Previous Brush",
+        "detail" : ""
+      },
+    "." : {
+        "shortcut" : "Next Brush",
+        "detail" : ""
+      },
+    "shift+," : {
+        "shortcut" : "First Brush",
+        "detail" : ""
+      },
+    "shift+." : {
+        "shortcut" : "Last Brush",
+        "detail" : ""
+      },
+    "ctrl+tab" : {
+        "shortcut" : "Cycle through open documents.",
+        "detail" : ""
+      },
+    "cmd+shift+~" : {
+        "shortcut" : "Switch to previous document.",
+        "detail" : ""
+      },
+    "cmd+shift+w" : {
+        "shortcut" : "Close a file in Photoshop and open Bridge.",
+        "detail" : ""
+      },
+    "f" : {
+        "shortcut" : "Toggle (forward) between Standard screen mode, Full screen mode with menu bar, and Full screen mode.",
+        "detail" : ""
+      },
+    "shift+f" : {
+        "shortcut" : "Toggle (backward) between Standard screen mode, Full screen mode with menu bar, and Full screen mode.",
+        "detail" : ""
+      },
+    "space" : {
+        "shortcut" : "Switch to Hand tool (when not in text-edit mode). Spacebar-drag while dragging with the Zoom tool to move Zoom marquee.",
+        "detail" : ""
+      },
+    "cmd+space" : {
+        "shortcut" : "Switch to Zoom In tool.",
+        "detail" : ""
+      },
+    "alt+space" : {
+        "shortcut" : "Switch to Zoom Out tool.",
+        "detail" : ""
+      },
+    "shift+enter" : {
+        "shortcut" : "In the Navigator panel zoom percentage box, apply zoom percentage while keeping zoom percentage box active.",
+        "detail" : ""
+      },
+    "\\" : {
+        "shortcut" : "Toggle layer mask on/off as rubylith (layer mask must be selected).",
+        "detail" : ""
+      },
+
+
+
+
+    "cmd" : {
+        "shortcut" : "Command-click to toggle auto-select with move tool. Command-drag over preview in Navigator panel to zoom in on specified area of an image.",
+        "detail" : ""
+      },
+    "shift" : {
+        "shortcut" : "Shift-drag with the Hand tool to simultaneously pan multiple documents. Shift-drag with any selection tool to add to a selection.",
+        "detail" : ""
+      },
+    "alt" : {
+        "shortcut" : "Alt-click + tool to cycle through hidden tools (except Add/Delete Anchor Point, and Convert Point tools).",
+        "detail" : ""
+      }
+  },
+
+  "Ai" : {
+    "fullname" : "ADOBE ILLUSTRATOR"
+  },
+
+  "Id" : {
+    "fullname" : "ADOBE INDESIGN"
+  },
+
+  "Pr" : {
+    "fullname" : "ADOBE PREMIERE"
+  },
+
+  "Dw" : {
+    "fullname" : "ADOBE DREAMWEAVER"
+  },
+
+  "Lr" : {
+    "fullname" : "ADOBE LIGHTROOM"
+  }
+
+}
