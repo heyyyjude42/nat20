@@ -2,37 +2,75 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './fonts.css';
+import races from "./data/01 races.json"
 
 function header() {
   return (<h3 class="head">Nat20</h3>);
 }
 
-function SearchBar(props) {
-  return(
-    <input type="text" placeholder="type anything..." class="searchbar" onkeyup={() => this.props.onKeyUp()}/>
-  );
+function search(text) {
+  let results = [];
+  for (var key in races["Races"]) {
+    if (races["Races"].hasOwnProperty(text)) {
+      results.push(races["Races"][key]);
+    }
+  }
+  if (results.length > 0) {
+    return results;
+  }
+}
+
+function getRawMarkup(text) {
+  var Remarkable = require('remarkable');
+  const md = new Remarkable();
+  console.log(text);
+  return { __html: md.render(text)};
+}
+
+function displayArray(arr) {
+  if (arr) {
+    if (Array.isArray(arr)) {
+      return (
+        <div>
+          {arr.map(text => (
+            <div>
+              {displayArray(text)}
+            </div>
+          ))}
+        </div>
+      )
+    } else {
+      return (
+        <div dangerouslySetInnerHTML={getRawMarkup(arr)}/>
+      );
+    }
+  }
 }
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentSearch: ""
+      text: "",
+      results: []
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleClick(text) {
+  handleChange(e) {
     this.setState({
-      currentSearch: text
+      text: e.target.value,
+      results: search(e.target.value)
     });
-    this.resetColors();
   }
 
   render() {
     return (
       <div>
         {header()}
-        <SearchBar onKeyUp={text => this.handleClick(text)}/>
+        <input type="text" placeholder="type anything..." class="searchbar"
+          onChange={this.handleChange} value={this.state.text}/>
+        {displayArray(this.state.results)}
       </div>
     );
   }
