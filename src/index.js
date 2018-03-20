@@ -34,7 +34,7 @@ function dfs(target, d, regexp) {
     }
     if (key.toLowerCase().includes(target)) {
       results.matches.push({ title: key, content: d[key]});
-    } else if (regexp.test(key.toLowerCase()) && comparator.compareTwoStrings(key, target) > 0.8) {
+    } else if (regexp.test(key.toLowerCase()) && comparator.compareTwoStrings(key, target) > 0.4) {
       results.partials.push({ title: key, content: d[key]});
     } else {
       if (typeof d[key] === "object" && !Array.isArray(d[key])) {
@@ -59,6 +59,47 @@ function title(str) {
   );
 }
 
+function subtitle(str) {
+  if (str.lastIndexOf("/") === str.length-1) {
+    str = str.substring(0, str.length-1);
+  }
+  return (
+    <h5>{str.substring(str.lastIndexOf("/")+1, str.length)}</h5>
+  )
+}
+
+/* TODO: tables*/
+function content(obj) {
+  if (typeof obj === "object") {
+    if (Array.isArray(obj)) {
+      return(
+        <div>
+          <ul>
+            {obj.map(element => (
+              <div>{content(element)}</div>
+            ))}
+          </ul>
+        </div>
+      )
+    } else {
+      return(
+        <div>
+          {Object.keys(obj).map(key => (
+            <ul>
+              {subtitle(key)}
+              {content(obj[key])}
+            </ul>
+          ))}
+        </div>
+      )
+    }
+  } else {
+    return(
+      <div dangerouslySetInnerHTML={getRawMarkup(obj)}/>
+    )
+  }
+}
+
 function getRawMarkup(text) {
   var Remarkable = require('remarkable');
   const md = new Remarkable();
@@ -73,12 +114,17 @@ class List extends React.Component {
   render() {
     var data = this.props.data;
 
+    if (data.length > 40) {
+      return null;
+    }
+
     return (
       <div>
         {Object.keys(data).map(function(key) {
           return (
             <div class="result">
               {title(data[key].title)}
+              {content(data[key].content)}
             </div>
           );
         })}
