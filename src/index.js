@@ -4,6 +4,8 @@ import './index.css';
 import './fonts.css';
 import srd from "./data/srd.json"
 
+var comparator = require('string-similarity');
+
 function header() {
   return (<h3 class="head">Nat20</h3>);
 }
@@ -32,7 +34,7 @@ function dfs(target, d, regexp) {
     }
     if (key.toLowerCase().includes(target)) {
       results.matches.push({ title: key, content: d[key]});
-    } else if (regexp.test(key.toLowerCase())) {
+    } else if (regexp.test(key.toLowerCase()) && comparator.compareTwoStrings(key, target) > 0.8) {
       results.partials.push({ title: key, content: d[key]});
     } else {
       if (typeof d[key] === "object" && !Array.isArray(d[key])) {
