@@ -154,10 +154,6 @@ function getRawMarkup(text) {
 }
 
 class List extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     var data = this.props.data;
 
