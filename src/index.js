@@ -107,7 +107,7 @@ function tableMaker(obj) {
 
   return (
     <ReactTable sortable={false} data={data} columns={columns}
-      showPagination={false}/>)
+      showPagination={false} minRows={0}/>)
   ;
 }
 
@@ -123,21 +123,21 @@ function content(obj) {
       )
     } else {
       return(
-        <ul>
+        <div>
           {Object.keys(obj).map(function(key) {
             if (key.toLowerCase().includes("content/")) {
               return(<div>{content(obj[key])}</div>)
-            } else if (key.toLowerCase().includes("table/")) {
+            } else if (key.toLowerCase().includes("table/") || key.toLowerCase() === "table") {
               return(<div>{tableMaker(obj[key])}</div>)
             }
             return (
               <div>
                 {subtitle(key)}
-                {content(obj[key])}
+                <ul>{content(obj[key])}</ul>
               </div>
             );
           })}
-        </ul>
+        </div>
       )
     }
   } else {
