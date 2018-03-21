@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './fonts.css';
 import srd from "./data/srd.json"
+import ReactTable from "react-table"
+import 'react-table/react-table.css'
 
 var comparator = require('string-similarity');
 
@@ -29,7 +31,7 @@ function search(target) {
 function dfs(target, d, regexp) {
   let results = {matches: [], partials: []}
   for (var key in d) {
-    if (key.toLowerCase().includes("content/")) {
+    if (key.toLowerCase().includes("content/") || key.toLowerCase().includes("table/")) {
       continue;
     }
     if (key.toLowerCase().includes(target)) {
@@ -60,42 +62,87 @@ function title(str) {
 }
 
 function subtitle(str) {
-  if (str.lastIndexOf("/") === str.length-1) {
-    str = str.substring(0, str.length-1);
-  }
+  str = parseLastLevel(str);
   return (
-    <h5>{str.substring(str.lastIndexOf("/")+1, str.length)}</h5>
+    <h5>{str}</h5>
   )
 }
 
-/* TODO: tables*/
+function parseLastLevel(str) {
+  if (str.lastIndexOf("/") === str.length-1) {
+    str = str.substring(0, str.length-1);
+  }
+  return str.substring(str.lastIndexOf("/")+1, str.length);
+}
+
+function tableMaker(obj) {
+  let columns = [];
+  let data = [];
+
+  for (var key in obj) {
+    const parsedKey = parseLastLevel(key);
+    let style = { Header: parsedKey, accessor: key, style: { "white-space": "normal", "text-align": "center", "vertical-align": "middle", "word-wrap": "normal" },
+      headerStyle: { "overflow": "unset", "word-wrap": "break-word", "white-space": "normal"} };
+
+    if (parsedKey.length <= 3) {
+      style["maxWidth"] = 50;
+    } else if (parsedKey == "Level") {
+      style["maxWidth"] = 70;
+    }
+
+    columns.push(style);
+
+    if (data.length === 0) {
+      obj[key].forEach(function(element) {
+        let newObj = {};
+        newObj[key] = element;
+        data.push(newObj);
+      })
+    } else {
+      for (var i = 0; i < obj[key].length; i++) {
+        data[i][key] = obj[key][i];
+      }
+    }
+  }
+
+  return (
+    <ReactTable sortable={false} data={data} columns={columns}
+      showPagination={false}/>)
+  ;
+}
+
 function content(obj) {
   if (typeof obj === "object") {
     if (Array.isArray(obj)) {
       return(
-        <div>
-          <ul>
+          <div>
             {obj.map(element => (
               <div>{content(element)}</div>
             ))}
-          </ul>
-        </div>
+          </div>
       )
     } else {
       return(
-        <div>
-          {Object.keys(obj).map(key => (
-            <ul>
-              {subtitle(key)}
-              {content(obj[key])}
-            </ul>
-          ))}
-        </div>
+        <ul>
+          {Object.keys(obj).map(function(key) {
+            if (key.toLowerCase().includes("content/")) {
+              return(<div>{content(obj[key])}</div>)
+            } else if (key.toLowerCase().includes("table/")) {
+              return(<div>{tableMaker(obj[key])}</div>)
+            }
+            return (
+              <div>
+                {subtitle(key)}
+                {content(obj[key])}
+              </div>
+            );
+          })}
+        </ul>
       )
     }
   } else {
     return(
-      <div dangerouslySetInnerHTML={getRawMarkup(obj)}/>
+      <div class="text" dangerouslySetInnerHTML={getRawMarkup(obj)}/>
     )
   }
 }

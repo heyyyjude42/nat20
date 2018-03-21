@@ -18,6 +18,13 @@ body {
   background-color: #334;
   text-align: right;
   margin-bottom: -5px;
+  z-index: 100;
+}
+
+h4 {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
 }
 
 .searchbar {
@@ -36,6 +43,7 @@ body {
   font-family: "Lora", serif;
   color: #f4f1ed;
   box-shadow: none;
+  z-index: 101;
 }
 
 .searchbar:focus {
@@ -61,6 +69,16 @@ body {
 
 .result:last-child {
   border-bottom: 0px;
+}
+
+.text {
+  line-height: 1.8;
+}
+
+.wordwrap {
+  white-space: pre-line !important;
+  word-wrap: break-word;
+  background-color: white;
 }
 
 ::placeholder{
