@@ -31,12 +31,12 @@ function search(target) {
 function dfs(target, d, regexp) {
   let results = {matches: [], partials: []}
   for (var key in d) {
-    if (key.toLowerCase().includes("content/") || key.toLowerCase().includes("table/")) {
+    if (key.toLowerCase().includes("content/") || key.toLowerCase().includes("table/") || key === "Monsters/") {
       continue;
     }
     if (key.toLowerCase().includes(target)) {
       results.matches.push({ title: key, content: d[key]});
-    } else if (regexp.test(key.toLowerCase()) && comparator.compareTwoStrings(key, target) > 0.4) {
+    } else if (regexp.test(key.toLowerCase()) && comparator.compareTwoStrings(key.replace(/\//g, " "), target) > 0.3) {
       results.partials.push({ title: key, content: d[key]});
     } else {
       if (typeof d[key] === "object" && !Array.isArray(d[key])) {
@@ -85,9 +85,9 @@ function tableMaker(obj) {
       headerStyle: { "overflow": "unset", "word-wrap": "break-word", "white-space": "normal"} };
 
     if (parsedKey.length <= 3) {
-      style["maxWidth"] = 50;
-    } else if (parsedKey == "Level") {
-      style["maxWidth"] = 70;
+      style["minWidth"] = 50;
+    } else {
+      style["minWidth"] = 80;
     }
 
     columns.push(style);
