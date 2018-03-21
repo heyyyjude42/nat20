@@ -31,12 +31,12 @@ function search(target) {
 function dfs(target, d, regexp) {
   let results = {matches: [], partials: []}
   for (var key in d) {
-    if (key.toLowerCase().includes("content/") || key.toLowerCase().includes("table/") || key === "Monsters/") {
+    if (key.toLowerCase().includes("content/") || key.toLowerCase().includes("table/")) {
       continue;
     }
     if (key.toLowerCase().includes(target)) {
       results.matches.push({ title: key, content: d[key]});
-    } else if (regexp.test(key.toLowerCase()) && comparator.compareTwoStrings(key.replace(/\//g, " "), target) > 0.3) {
+    } else if (regexp.test(key.toLowerCase()) && comparator.compareTwoStrings(key.toLowerCase(), target) > 0.4) {
       results.partials.push({ title: key, content: d[key]});
     } else {
       if (typeof d[key] === "object" && !Array.isArray(d[key])) {
