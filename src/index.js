@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './fonts.css';
-import srd from "./data/srd.json"
+import srd from "./data/srdnew.json"
 import ReactTable from "react-table"
 import 'react-table/react-table.css'
 
@@ -23,6 +23,7 @@ function getRegExp(target) {
 }
 
 function search(target) {
+  target = target.replace(/ /g, "");
   let regexp = getRegExp(target);
   let dict = dfs(target.toLowerCase(), srd, regexp);
   return dict.matches.concat(dict.partials);
@@ -36,7 +37,7 @@ function dfs(target, d, regexp) {
     }
     if (key.toLowerCase().includes(target)) {
       results.matches.push({ title: key, content: d[key]});
-    } else if (regexp.test(key.toLowerCase()) && comparator.compareTwoStrings(key.toLowerCase(), target) > 0.4) {
+    } else if (regexp.test(key) || comparator.compareTwoStrings(key.toLowerCase(), target) > 0.4) {
       results.partials.push({ title: key, content: d[key]});
     } else {
       if (typeof d[key] === "object" && !Array.isArray(d[key])) {
@@ -81,13 +82,13 @@ function tableMaker(obj) {
 
   for (var key in obj) {
     const parsedKey = parseLastLevel(key);
-    let style = { Header: parsedKey, accessor: key, style: { "white-space": "normal", "text-align": "center", "vertical-align": "middle", "word-wrap": "normal" },
+    let style = { Header: parsedKey, accessor: key, style: { "white-space": "normal", "text-align": "center", "vertical-align": "middle", "word-wrap": "break-word" },
       headerStyle: { "overflow": "unset", "word-wrap": "break-word", "white-space": "normal"} };
 
     if (parsedKey.length <= 3) {
-      style["minWidth"] = 50;
+      style["minWidth"] = 40;
     } else {
-      style["minWidth"] = 80;
+      style["minWidth"] = 110;
     }
 
     columns.push(style);

@@ -751,7 +751,7 @@
          },
          "Druid/Class Features/Timeless Body/":"Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year.",
          "Druid/Class Features/Spellcasting/":{
-            "Druid/Class Features/Spellcasting/Spellcasting Focus/":"You can use a druidic focus (see chapter 5, \"Equip- ment\") as a spellcasting focus for your druid spells.",
+            "Druid/Class Features/Spellcasting/Spellcasting Focus/":"You can use a druidic focus (see chapter 5, \"Equipment\") as a spellcasting focus for your druid spells.",
             "Druid/Class Features/Spellcasting/Preparing and Casting Spells/":{
                "Druid/Class Features/Spellcasting/Preparing and Casting Spells/content/":[
                   "The Druid table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these druid spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.",
@@ -3967,7 +3967,7 @@
             ],
             "Bard/Class Features/Spellcasting/Ritual Casting/":"You can cast any bard spell you know as a ritual if that spell has the ritual tag.",
             "Bard/Class Features/Spellcasting/Cantrips/":"You know two cantrips of your choice from the bard spell list. You learn additional bard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Bard table.",
-            "Bard/Class Features/Spellcasting/Spellcasting Focus/":"You can use a musical instrument (see chapter 5, \"Equip-ment\") as a spellcasting focus for your bard spells."
+            "Bard/Class Features/Spellcasting/Spellcasting Focus/":"You can use a musical instrument (see chapter 5, \"Equipment\") as a spellcasting focus for your bard spells."
          },
          "Bard/Class Features/Proficiencies/":{
             "Bard/Class Features/Proficiencies/content/":[
