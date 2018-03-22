@@ -6,13 +6,12 @@ import srd from "./data/srdnew.json"
 import ReactTable from "react-table"
 import 'react-table/react-table.css'
 
-var comparator = require('string-similarity');
-
 function header() {
   return (<h3 class="head">Nat20</h3>);
 }
 
 function getRegExp(target) {
+  target = target.replace(/ /g, "");
   let arr = target.split("");
   let regexp = "";
   arr.forEach(function(char) {
@@ -23,10 +22,8 @@ function getRegExp(target) {
 }
 
 function search(target) {
-  target = target.replace(/ /g, "");
   let regexp = getRegExp(target);
-  let dict = dfs(target.toLowerCase(), srd, regexp);
-  return dict.matches.concat(dict.partials);
+  return dfs(target.toLowerCase(), srd, regexp);
 }
 
 function dfs(target, d, regexp) {
@@ -37,7 +34,7 @@ function dfs(target, d, regexp) {
     }
     if (key.toLowerCase().includes(target)) {
       results.matches.push({ title: key, content: d[key]});
-    } else if (regexp.test(key) || comparator.compareTwoStrings(key.toLowerCase(), target) > 0.4) {
+    } else if (regexp.test(key)) {
       results.partials.push({ title: key, content: d[key]});
     } else {
       if (typeof d[key] === "object" && !Array.isArray(d[key])) {
@@ -56,8 +53,8 @@ function title(str) {
   str = str.substring(0, str.length-1);
   return (
     <div>
-      <h3>{str.substring(str.lastIndexOf("/")+1, str.length)}</h3>
-      <h4>{str.substring(0, str.lastIndexOf("/"))}</h4>
+      <h3 class="title">{str.substring(str.lastIndexOf("/")+1, str.length)}</h3>
+      <h4 class="sub">{str.substring(0, str.lastIndexOf("/"))}</h4>
     </div>
   );
 }
@@ -65,7 +62,7 @@ function title(str) {
 function subtitle(str) {
   str = parseLastLevel(str);
   return (
-    <h5>{str}</h5>
+    <div class="categoryhead"><h4>{str}</h4></div>
   )
 }
 
@@ -157,18 +154,15 @@ function getRawMarkup(text) {
 class List extends React.Component {
   render() {
     var data = this.props.data;
-
-    if (data.length > 40) {
-      return null;
-    }
+    var list = data.matches.concat(data.partials);
 
     return (
       <div>
-        {Object.keys(data).map(function(key) {
+        {Object.keys(list).map(function(key) {
           return (
             <div class="result">
-              {title(data[key].title)}
-              {content(data[key].content)}
+              {title(list[key].title)}
+              {content(list[key].content)}
             </div>
           );
         })}
@@ -182,7 +176,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       text: "",
-      results: []
+      results: { matches: [], partials: []}
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -197,7 +191,7 @@ class App extends React.Component {
       });
     } else {
       this.setState({
-        results: []
+        results: { matches: [], partials: []}
       });
     }
   }
