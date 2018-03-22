@@ -32,6 +32,7 @@ body {
 .categoryhead h4{
   font-family: "Montserrat", sans-serif;
   background-color: #989;
+  opacity: 0.9;
   color: #f4f1ed;
   border-radius: 2px;
   display: inline;
