@@ -5,6 +5,7 @@ import './fonts.css';
 import srd from "./data/srdnew.json"
 import ReactTable from "react-table"
 import 'react-table/react-table.css'
+import LazyLoad from 'react-lazyload';
 
 function header() {
   return (<h3 class="head">Nat20</h3>);
@@ -160,13 +161,23 @@ class List extends React.Component {
       <div>
         {Object.keys(list).map(function(key) {
           return (
-            <div class="result">
-              {title(list[key].title)}
-              {content(list[key].content)}
-            </div>
+            <ListItem title={list[key].title} content={list[key].content}/>
           );
         })}
       </div>
+    );
+  }
+}
+
+class ListItem extends React.Component {
+  render() {
+    return(
+      <LazyLoad overflow="true" once="true" height={5}>
+        <div class="result">
+          {title(this.props.title)}
+          {content(this.props.content)}
+        </div>
+      </LazyLoad>
     );
   }
 }

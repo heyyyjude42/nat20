@@ -6,6 +6,7 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-lazy-load": "^3.0.13",
     "react-lazyload": "^2.3.0",
     "react-scripts": "1.1.1",
     "react-table": "^6.8.0",
